@@ -25,6 +25,8 @@ alias conf='cd Documents/cmt/integrations/confirmation-message-server'
 alias bionet='cd Documents/cmt/integrations/laboratory-bionet'
 alias bupa='cd Documents/cmt/integrations/laboratory-server'
 alias synlab='cd Documents/cmt/integrations/synlab'
+alias rx='cd Documents/cmt/integrations/rx-server'
+alias invoice='cd Documents/cmt/integrations/invoice-server'
 
 
 # Execute projects
