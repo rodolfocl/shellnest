@@ -26,7 +26,7 @@ alias bionet='cd Documents/cmt/integrations/laboratory-bionet'
 alias bupa='cd Documents/cmt/integrations/laboratory-server'
 alias synlab='cd Documents/cmt/integrations/synlab'
 alias rx='cd Documents/cmt/integrations/rx-server'
-alias invoice='cd Documents/cmt/integrations/invoice-server'
+alias invoice='cd Documents/cmt/integrations/invoices-server'
 
 
 # Execute projects
