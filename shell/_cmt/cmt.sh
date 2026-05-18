@@ -13,6 +13,7 @@ alias 16="nvm use 16.20.2"
 # Generales
 alias host="sudo vim /private/etc/hosts"
 alias rs="source ~/.zshrc "
+alias cc="source ~/.zshrc "
 
 # Directories CMT
 alias cmt='cd Documents/cmt'
