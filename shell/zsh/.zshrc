@@ -159,4 +159,5 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # Add custom functions CMT
-source $HOME/.zsh_functions
+  source $HOME/.zsh_functions
+  export PATH="$HOME/.yarn/bin:$PATH"
