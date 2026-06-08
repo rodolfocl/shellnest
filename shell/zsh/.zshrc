@@ -126,6 +126,7 @@ source $DOTFILES/shell/_clg/clg.sh
 source $DOTFILES/shell/_cns/cns.sh
 source $DOTFILES/shell/_cmt/cmt.sh
 source $DOTFILES/shell/_global/global.sh
+source $DOTFILES/shell/_ssh/ssh.sh
 
 # Para ver ejemplo de sintaxys de shell script
 # https://devhints.io/bash
