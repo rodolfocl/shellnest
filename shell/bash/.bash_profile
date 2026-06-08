@@ -1,7 +1,9 @@
 source ~/.profile
 # ===============================================================
 # IMPORTO ARCHIVO INDEX REDIRECCIONANDO A LOS ALIASES Y FUNCIONES
-source /Users/rodolfovenegas/.dotfiles/shell/init.sh
+export SHELLNEST="$HOME/.shellnest"
+source $SHELLNEST/shell/_git/git.sh
+source $SHELLNEST/shell/_global/global.sh
 # ==============================================================
 
 # Setting PATH for Python 2.7

@@ -1,91 +1,59 @@
-# 🛠️ Dotfiles de Rodolfo
+# 🐚 shellnest
 
-Este repositorio contiene mis configuraciones personales (`dotfiles`) para mi entorno de desarrollo en macOS. Es una forma de mantener todo organizado y fácilmente replicable en nuevos equipos.
+Framework personal de configuración de shell para macOS. Gestiona aliases, funciones, configuración git y SSH, organizado por contexto de proyecto.
 
-## 🧠 ¿Para qué sirve este repo?
+---
 
-Guarda mis configuraciones de terminal, herramientas de desarrollo, alias personalizados, y otros ajustes que uso diariamente. Ideal para:
-
-- Migrar fácilmente a un nuevo Mac
-- Recordar qué configuraciones usé en el pasado
-- Compartir configuraciones entre mis distintos dispositivos
-
-## 📁 Estructura del repositorio
-
-```plaintext
-dotfiles/
-├── README.md                # Este archivo
-├── .gitignore               # Ignora archivos innecesarios
-├── .idea/                   # Configuración del proyecto (VSCode/JetBrains)
-├── bash/                    # Configuraciones específicas para bash
-├── zsh/                     # Configuraciones específicas para zsh
-├── bin/                     # Scripts ejecutables personales
-├── doc/                     # Documentación personal
-│   └── Documentacion.txt
-├── editors/
-│   ├── intellij-idea/
-│   └── webstorm/
-├── git/
-│   ├── .gitconfig           # Configuración de Git
-│   └── .gitignore_global    # Ignorados globales de Git
-├── langs/                   # Archivos relacionados con lenguajes de programación
-│   ├── archivos creados personalmente.txt
-│   └── lenguajes de programacion.txt
-├── shell/                   # Scripts de shell organizados por contexto
-│   ├── _clg/clg.sh
-│   ├── _cmt/cmt.sh
-│   ├── _cns/cns.sh
-│   ├── _git/git.sh
-│   ├── _global/
-│   │   ├── global.sh
-│   │   └── variables.sh
-│   └── init.sh
-├── so/mac/                  # Configuraciones específicas para macOS
-│   ├── iTerm2/
-│   └── karabiner-elements/
-├── symlinks/                # Scripts para crear enlaces simbólicos
-│   └── links.sh
-```
-
-> **Nota**: Algunos archivos pueden estar ocultos por ser "dotfiles". Usa `ls -la` para verlos.
-> **Nota**: Tambien usar `cmd + shift + .` para ver los archivos ocultos en Finder.
-
-## ⚙️ Instalación rápida
+## 🚀 Mac nueva — un solo comando
 
 ```bash
-git clone https://github.com/rodolfocl/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-./install.sh
+git clone git@github.com:rodolfocl/shellnest.git ~/.shellnest && ~/.shellnest/install.sh
 ```
 
-Este script crea enlaces simbólicos desde tu home (`~`) hacia los archivos de configuración del repositorio.
+> Eso es todo. El script instala dependencias, plugins y crea los symlinks automáticamente.
 
-## 📌 Requisitos
+---
 
-- macOS
-- Zsh (ya viene por defecto en macOS) + instalar [Oh My Zsh](https://ohmyz.sh/)
-- [Homebrew](https://brew.sh/) para instalar herramientas adicionales fácilmente
-- Plugins recomendados para Zsh:
-  - `zsh-autosuggestions`
-  - `zsh-syntax-highlighting`
-- Tema [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-
-- Git
-
-## 🧪 Tips útiles
-
-- Personaliza tus alias por contexto dentro de la carpeta [`shell`](./shell), por ejemplo en:
-  - `shell/_clg/clg.sh`
-  - `shell/_cmt/cmt.sh`
-  - `shell/_cns/cns.sh`
-- Recarga la terminal después de hacer cambios:
+## 🔄 Después de cada cambio en el repo
 
 ```bash
 source ~/.zshrc
 ```
 
-- Si algo falla, revisa el script `install.sh` y asegúrate de que los paths sean correctos.
+> O usá el alias corto: `rs`
 
-## 📄 Licencia
+---
 
-Este repositorio es de uso personal. Si te sirve de inspiración, ¡bienvenido! Pero úsalo bajo tu propio riesgo 😅
+## 🔒 Hosts SSH privados (servidores de trabajo)
+
+Los hosts privados **no se versionan**. Agregálos en un archivo local:
+
+```bash
+vim ~/.ssh/config.local
+```
+
+---
+
+## 📁 Estructura
+
+```plaintext
+shellnest/
+├── install.sh               # Instalador automático
+├── shell/
+│   ├── _git/git.sh          # Aliases y funciones git
+│   ├── _clg/clg.sh          # Contexto Colegium
+│   ├── _cmt/cmt.sh          # Contexto CMT
+│   ├── _cns/cns.sh          # Contexto Consorcio
+│   ├── _global/
+│   │   ├── global.sh        # Aliases globales
+│   │   └── variables.sh     # Variables de color compartidas
+│   ├── _ssh/
+│   │   ├── ssh.sh           # Funciones SSH (tunnel, ssh-hosts, etc.)
+│   │   ├── config           # SSH config versionado
+│   │   └── config.example   # Plantilla de referencia
+│   └── zsh/.zshrc           # Configuración principal ZSH
+├── git/
+│   ├── .gitconfig
+│   └── .gitignore_global
+└── symlinks/links.sh        # Referencias de symlinks
+```

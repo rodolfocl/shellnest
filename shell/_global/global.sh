@@ -7,9 +7,9 @@ alias copy="pbcopy < "
 
 # Shell configuration
 alias zshconfig="vim ~/.zshrc"
-alias dotfiles="cd /Users/rodolfovenegas/.dotfiles/"
-alias dot="open .dotfiles"
-alias opendot="idea .dotfiles"
+alias shellnest="cd $SHELLNEST"
+alias dot="open $SHELLNEST"
+alias opendot="idea $SHELLNEST"
 
 # Open directories with finder, intellij or vscode
 alias w="/usr/local/bin/webstorm"

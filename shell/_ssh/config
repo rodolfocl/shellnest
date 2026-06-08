@@ -1,0 +1,9 @@
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa
+  UseKeychain yes
+  AddKeysToAgent yes
+
+# Include hosts locales no versionados (IPs privadas, servidores de trabajo)
+Include ~/.ssh/config.local
