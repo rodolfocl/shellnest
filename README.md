@@ -2,10 +2,43 @@
 
 Framework personal de configuración de shell para macOS. Gestiona aliases, funciones, configuración git y SSH, organizado por contexto de proyecto.
 
+---
+
+## 🚀 Mac nueva — un solo comando
+
+```bash
+git clone git@github.com:rodolfocl/shellnest.git ~/.dotfiles && ~/.dotfiles/install.sh
+```
+
+> Eso es todo. El script instala dependencias, plugins y crea los symlinks automáticamente.
+
+---
+
+## 🔄 Después de cada cambio en el repo
+
+```bash
+source ~/.zshrc
+```
+
+> O usá el alias corto: `rs`
+
+---
+
+## 🔒 Hosts SSH privados (servidores de trabajo)
+
+Los hosts privados **no se versionan**. Agregálos en un archivo local:
+
+```bash
+vim ~/.ssh/config.local
+```
+
+---
+
 ## 📁 Estructura
 
 ```plaintext
 shellnest/
+├── install.sh               # Instalador automático
 ├── shell/
 │   ├── _git/git.sh          # Aliases y funciones git
 │   ├── _clg/clg.sh          # Contexto Colegium
@@ -14,34 +47,13 @@ shellnest/
 │   ├── _global/
 │   │   ├── global.sh        # Aliases globales
 │   │   └── variables.sh     # Variables de color compartidas
+│   ├── _ssh/
+│   │   ├── ssh.sh           # Funciones SSH (tunnel, ssh-hosts, etc.)
+│   │   ├── config           # SSH config versionado
+│   │   └── config.example   # Plantilla de referencia
 │   └── zsh/.zshrc           # Configuración principal ZSH
 ├── git/
 │   ├── .gitconfig
 │   └── .gitignore_global
-├── symlinks/links.sh        # Crea enlaces simbólicos
-└── install.sh               # Instalación automática (Fase 5)
-```
-
-## ⚙️ Instalación
-
-```bash
-git clone git@github.com:rodolfovcl/shellnest.git ~/.dotfiles
-cd ~/.dotfiles
-./install.sh
-```
-
-## 📌 Requisitos
-
-- macOS + Zsh
-- [Oh My Zsh](https://ohmyz.sh/)
-- [Homebrew](https://brew.sh/)
-- Plugins: `zsh-autosuggestions`, `zsh-syntax-highlighting`
-- Herramientas: `nvm`, `fzf`, `tldr`
-
-## 🔄 Recargar configuración
-
-```bash
-source ~/.zshrc
-# o usar el alias
-rs
+└── symlinks/links.sh        # Referencias de symlinks
 ```
