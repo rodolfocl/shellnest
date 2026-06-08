@@ -10,7 +10,27 @@ Framework personal de configuración de shell para macOS. Gestiona aliases, func
 git clone git@github.com:rodolfocl/shellnest.git ~/.shellnest && ~/.shellnest/install.sh
 ```
 
-> Eso es todo. El script instala dependencias, plugins y crea los symlinks automáticamente.
+> El script instala dependencias, plugins y crea los symlinks automáticamente.
+> Al inicio pregunta si querés actualizar los paquetes ya instalados.
+
+---
+
+## 🔄 Actualizar paquetes instalados
+
+Desde una instalación existente, podés actualizar todo con el flag `--update`:
+
+```bash
+~/.shellnest/install.sh --update
+```
+
+O simplemente corré `install.sh` sin argumentos y respondé `y` a la pregunta inicial.
+
+Qué hace `--update`:
+
+- **Homebrew** → `brew update`
+- **Oh My Zsh** → `git pull` en `~/.oh-my-zsh`
+- **Plugins ZSH** → `git pull` en cada plugin
+- **Paquetes brew** → `brew upgrade <paquete>`
 
 ---
 

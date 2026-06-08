@@ -13,10 +13,22 @@ LCYAN='\033[1;36m'
 DGRAY='\033[1;30m'
 NC='\033[0m'
 
-_ok()   { echo "${GREEN}✔${NC}  $1"; }
-_skip() { echo "${YELLOW}→${NC}  $1 ${DGRAY}(ya instalado)${NC}"; }
-_info() { echo "${LCYAN}…${NC}  $1"; }
-_err()  { echo "${RED}✘${NC}  $1"; }
+_ok()      { echo "${GREEN}✔${NC}  $1"; }
+_skip()    { echo "${YELLOW}→${NC}  $1 ${DGRAY}(ya instalado)${NC}"; }
+_updated() { echo "${GREEN}→${NC}  $1 ${GREEN}(actualizado)${NC}"; }
+_info()    { echo "${LCYAN}…${NC}  $1"; }
+_err()     { echo "${RED}✘${NC}  $1"; }
+
+# Flag de actualización: --update como argumento o pregunta interactiva
+UPDATE=false
+if [[ "$1" == "--update" ]]; then
+  UPDATE=true
+else
+  echo ""
+  printf "  ¿Actualizar paquetes ya instalados? [y/N] "
+  read -r _reply
+  [[ "$_reply" =~ ^[Yy]$ ]] && UPDATE=true
+fi
 
 echo ""
 echo "${LCYAN}╔══════════════════════════════╗${NC}"
@@ -32,6 +44,10 @@ echo "${DGRAY}── Homebrew ────────────────�
 
 if command -v brew &>/dev/null; then
   _skip "Homebrew"
+  if $UPDATE; then
+    _info "Actualizando Homebrew..."
+    brew update --quiet && _updated "Homebrew"
+  fi
 else
   _info "Instalando Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -48,6 +64,10 @@ echo "${DGRAY}── Oh My Zsh ────────────────�
 
 if [[ -d "$HOME/.oh-my-zsh" ]]; then
   _skip "Oh My Zsh"
+  if $UPDATE; then
+    _info "Actualizando Oh My Zsh..."
+    git -C "$HOME/.oh-my-zsh" pull --quiet && _updated "Oh My Zsh"
+  fi
 else
   _info "Instalando Oh My Zsh..."
   RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -65,6 +85,10 @@ ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 
 if [[ -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]]; then
   _skip "zsh-autosuggestions"
+  if $UPDATE; then
+    _info "Actualizando zsh-autosuggestions..."
+    git -C "$ZSH_CUSTOM/plugins/zsh-autosuggestions" pull --quiet && _updated "zsh-autosuggestions"
+  fi
 else
   _info "Instalando zsh-autosuggestions..."
   git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions" --quiet
@@ -73,6 +97,10 @@ fi
 
 if [[ -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]]; then
   _skip "zsh-syntax-highlighting"
+  if $UPDATE; then
+    _info "Actualizando zsh-syntax-highlighting..."
+    git -C "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" pull --quiet && _updated "zsh-syntax-highlighting"
+  fi
 else
   _info "Instalando zsh-syntax-highlighting..."
   git clone https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" --quiet
@@ -91,6 +119,10 @@ brew_install() {
   local cmd=${2:-$1}
   if command -v "$cmd" &>/dev/null || brew list "$pkg" &>/dev/null 2>&1; then
     _skip "$pkg"
+    if $UPDATE; then
+      _info "Actualizando $pkg..."
+      brew upgrade "$pkg" 2>/dev/null && _updated "$pkg" || _skip "$pkg (sin actualizaciones)"
+    fi
   else
     _info "Instalando $pkg..."
     brew install "$pkg"
