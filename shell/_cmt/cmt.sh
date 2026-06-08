@@ -1,6 +1,6 @@
 #================================================================
 # IMPORTO VARIABLES GLOBALES
-source /Users/rodolfovenegas/.dotfiles/shell/_global/variables.sh
+source $DOTFILES/shell/_global/variables.sh
 #================================================================
 
 # CENTRO MEDICO DEL TRABAJADOR

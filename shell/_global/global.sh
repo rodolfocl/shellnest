@@ -7,7 +7,7 @@ alias copy="pbcopy < "
 
 # Shell configuration
 alias zshconfig="vim ~/.zshrc"
-alias dotfiles="cd /Users/rodolfovenegas/.dotfiles/"
+alias dotfiles="cd $DOTFILES"
 alias dot="open .dotfiles"
 alias opendot="idea .dotfiles"
 

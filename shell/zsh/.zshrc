@@ -1,12 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export DOTFILES="$HOME/.dotfiles"
+
 # =======================================================================================
 # ZSH THEME
 # =======================================================================================
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/rodolfovenegas/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -111,36 +113,19 @@ source $ZSH/oh-my-zsh.sh
 # VARIABLES DE ENTORNO
 # =======================================================================================
 
-#NVM
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completionexport PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
 
-# ORACLE INSTANT CLIENT
-# echo "export PATH=/opt/oracle/instantclient_19_3:$PATH" > ~/.profile
-# echo "export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_3" >> ~/.profile
-# source ~/.profile
-
-export PATH=/Users/rodolfovenegas/instantclient:$PATH
-export ORACLE_HOME=/Users/rodolfovenegas/instantclient
-export DYLD_LIBRARY_PATH=/Users/rodolfovenegas/instantclient
-export OCI_LIB_DIR=/Users/rodolfovenegas/instantclient
-export OCI_INC_DIR=/Users/rodolfovenegas/instantclient/sdk/include
-
-
-# /usr/local/bin:/usr/bin:/bin
 
 # =======================================================================================
 # IMPORTO ARCHIVO INDEX REDIRECCIONANDO A LOS ALIASES Y FUNCIONES
 # =======================================================================================
 
-# source /Users/rodolfovenegas/.dotfiles/shell/init.sh
-source /Users/rodolfovenegas/.dotfiles/shell/_git/git.sh
-source /Users/rodolfovenegas/.dotfiles/shell/_clg/clg.sh
-source /Users/rodolfovenegas/.dotfiles/shell/_cns/cns.sh
-source /Users/rodolfovenegas/.dotfiles/shell/_cmt/cmt.sh
-source /Users/rodolfovenegas/.dotfiles/shell/_global/global.sh
+source $DOTFILES/shell/_git/git.sh
+source $DOTFILES/shell/_clg/clg.sh
+source $DOTFILES/shell/_cns/cns.sh
+source $DOTFILES/shell/_cmt/cmt.sh
+source $DOTFILES/shell/_global/global.sh
 
 # Para ver ejemplo de sintaxys de shell script
 # https://devhints.io/bash
