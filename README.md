@@ -51,6 +51,16 @@ Qué actualiza:
 
 ---
 
+### 🚨 Emergencia — eliminar symlinks y reinstalar desde cero
+
+```sh
+rm -f ~/.zshrc ~/.bashrc ~/.bash_profile ~/.gitconfig ~/.gitignore_global ~/.ssh/config && ~/.shellnest/install.sh
+```
+
+> Elimina los enlaces simbólicos (no los archivos del repo) y reinstala.
+
+---
+
 ## 🔄 Después de cada cambio en el repo
 
 ```sh
