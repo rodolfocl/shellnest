@@ -4,28 +4,45 @@ Framework personal de configuración de shell para macOS. Gestiona aliases, func
 
 ---
 
-## 🚀 Mac nueva — un solo comando
+## 📦 Instalación
 
-```bash
+### Mac nueva
+
+Si no tienes el repo todavía, clona e instala con un solo comando:
+
+```sh
 git clone git@github.com:rodolfocl/shellnest.git ~/.shellnest && ~/.shellnest/install.sh
 ```
 
-> El script instala dependencias, plugins y crea los symlinks automáticamente.
-> Al inicio pregunta si querés actualizar los paquetes ya instalados.
+> 📋 Puedes copiar el comando con el botón que aparece arriba a la derecha del bloque.
+
+Esto descarga el repo y ejecuta el instalador automáticamente.
 
 ---
 
-## 🔄 Actualizar paquetes instalados
+### Ya tienes el repo clonado
 
-Desde una instalación existente, podés actualizar todo con el flag `--update`:
+Si el repo ya existe en `~/.shellnest` (por ejemplo, después de reorganizar archivos o en una reinstalación), solo corre el instalador:
 
-```bash
+```sh
+~/.shellnest/install.sh
+```
+
+Responde `N` a la pregunta de actualizar. El script recrea los symlinks y verifica que todo esté instalado.
+
+---
+
+### Actualizar paquetes existentes
+
+Para actualizar Homebrew, Oh My Zsh, plugins y paquetes brew:
+
+```sh
 ~/.shellnest/install.sh --update
 ```
 
-O simplemente corré `install.sh` sin argumentos y respondé `y` a la pregunta inicial.
+O corre `install.sh` sin argumentos y responde `y` a la pregunta inicial.
 
-Qué hace `--update`:
+Qué actualiza:
 
 - **Homebrew** → `brew update`
 - **Oh My Zsh** → `git pull` en `~/.oh-my-zsh`
@@ -36,19 +53,19 @@ Qué hace `--update`:
 
 ## 🔄 Después de cada cambio en el repo
 
-```bash
+```sh
 source ~/.zshrc
 ```
 
-> O usá el alias corto: `rs`
+> O usa el alias corto: `rs`
 
 ---
 
 ## 🔒 Hosts SSH privados (servidores de trabajo)
 
-Los hosts privados **no se versionan**. Agregálos en un archivo local:
+Los hosts privados **no se versionan**. Agrégalos en un archivo local:
 
-```bash
+```sh
 vim ~/.ssh/config.local
 ```
 
