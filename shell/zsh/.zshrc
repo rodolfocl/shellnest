@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export DOTFILES="$HOME/.dotfiles"
+export SHELLNEST="$HOME/.shellnest"
 
 # =======================================================================================
 # ZSH THEME
@@ -121,12 +121,12 @@ export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
 # IMPORTO ARCHIVO INDEX REDIRECCIONANDO A LOS ALIASES Y FUNCIONES
 # =======================================================================================
 
-source $DOTFILES/shell/_git/git.sh
-source $DOTFILES/shell/_clg/clg.sh
-source $DOTFILES/shell/_cns/cns.sh
-source $DOTFILES/shell/_cmt/cmt.sh
-source $DOTFILES/shell/_global/global.sh
-source $DOTFILES/shell/_ssh/ssh.sh
+source $SHELLNEST/shell/_git/git.sh
+source $SHELLNEST/shell/_clg/clg.sh
+source $SHELLNEST/shell/_cns/cns.sh
+source $SHELLNEST/shell/_cmt/cmt.sh
+source $SHELLNEST/shell/_global/global.sh
+source $SHELLNEST/shell/_ssh/ssh.sh
 
 # Para ver ejemplo de sintaxys de shell script
 # https://devhints.io/bash

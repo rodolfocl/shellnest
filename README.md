@@ -7,7 +7,7 @@ Framework personal de configuración de shell para macOS. Gestiona aliases, func
 ## 🚀 Mac nueva — un solo comando
 
 ```bash
-git clone git@github.com:rodolfocl/shellnest.git ~/.dotfiles && ~/.dotfiles/install.sh
+git clone git@github.com:rodolfocl/shellnest.git ~/.shellnest && ~/.shellnest/install.sh
 ```
 
 > Eso es todo. El script instala dependencias, plugins y crea los symlinks automáticamente.

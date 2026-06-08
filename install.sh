@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
 # shellnest — instalador de entorno personal
-# Uso: git clone git@github.com:rodolfocl/shellnest.git ~/.dotfiles && ~/.dotfiles/install.sh
+# Uso: git clone git@github.com:rodolfocl/shellnest.git ~/.shellnest && ~/.shellnest/install.sh
 
-DOTFILES="$(cd "$(dirname "$0")" && pwd)"
+SHELLNEST="$(cd "$(dirname "$0")" && pwd)"
 
 # Colores
 RED='\033[0;31m'
@@ -130,12 +130,12 @@ make_link() {
 
 mkdir -p "$HOME/.ssh"
 
-make_link "$DOTFILES/shell/zsh/.zshrc"         "$HOME/.zshrc"
-make_link "$DOTFILES/shell/bash/.bashrc"        "$HOME/.bashrc"
-make_link "$DOTFILES/shell/bash/.bash_profile"  "$HOME/.bash_profile"
-make_link "$DOTFILES/git/.gitconfig"            "$HOME/.gitconfig"
-make_link "$DOTFILES/git/.gitignore_global"     "$HOME/.gitignore_global"
-make_link "$DOTFILES/shell/_ssh/config"         "$HOME/.ssh/config"
+make_link "$SHELLNEST/shell/zsh/.zshrc"         "$HOME/.zshrc"
+make_link "$SHELLNEST/shell/bash/.bashrc"        "$HOME/.bashrc"
+make_link "$SHELLNEST/shell/bash/.bash_profile"  "$HOME/.bash_profile"
+make_link "$SHELLNEST/git/.gitconfig"            "$HOME/.gitconfig"
+make_link "$SHELLNEST/git/.gitignore_global"     "$HOME/.gitignore_global"
+make_link "$SHELLNEST/shell/_ssh/config"         "$HOME/.ssh/config"
 echo ""
 
 

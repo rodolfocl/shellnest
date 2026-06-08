@@ -1,6 +1,6 @@
 #================================================================
 # IMPORTO VARIABLES GLOBALES
-source $DOTFILES/shell/_global/variables.sh
+source $SHELLNEST/shell/_global/variables.sh
 #================================================================
 
 # CENTRO MEDICO DEL TRABAJADOR
