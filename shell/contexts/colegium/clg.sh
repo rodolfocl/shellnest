@@ -1,6 +1,6 @@
 #================================================================
 # IMPORTO VARIABLES GLOBALES
-source $SHELLNEST/shell/_global/variables.sh
+source $SHELLNEST/shell/global/variables.sh
 #================================================================
 
 
@@ -272,7 +272,7 @@ function run() {
       echo "${DGRAY}# ❌ ${NC}${RED}ERROR:${NC} EL PROYECTO INGRESADO NO ES VALIDO${DGRAY}   #${NC}"
       echo "${DGRAY}###################################################${NC}"
       echo ""
-      cat $SHELLNEST/shell/_images/.bowser
+      cat $SHELLNEST/shell/images/.bowser
       echo ""
       echo "${DGRAY}###################################################${NC}"
       echo ""

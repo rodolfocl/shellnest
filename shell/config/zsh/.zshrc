@@ -121,12 +121,12 @@ export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
 # IMPORTO ARCHIVO INDEX REDIRECCIONANDO A LOS ALIASES Y FUNCIONES
 # =======================================================================================
 
-source $SHELLNEST/shell/_git/git.sh
-source $SHELLNEST/shell/_clg/clg.sh
-source $SHELLNEST/shell/_cns/cns.sh
-source $SHELLNEST/shell/_cmt/cmt.sh
-source $SHELLNEST/shell/_global/global.sh
-source $SHELLNEST/shell/_ssh/ssh.sh
+source $SHELLNEST/shell/git/git.sh
+source $SHELLNEST/shell/contexts/colegium/clg.sh
+source $SHELLNEST/shell/contexts/consorcio/cns.sh
+source $SHELLNEST/shell/contexts/cmt/cmt.sh
+source $SHELLNEST/shell/global/global.sh
+source $SHELLNEST/shell/ssh/ssh.sh
 
 # Para ver ejemplo de sintaxys de shell script
 # https://devhints.io/bash

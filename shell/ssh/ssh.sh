@@ -1,6 +1,6 @@
 #================================================================
 # IMPORTO VARIABLES GLOBALES
-source $SHELLNEST/shell/_global/variables.sh
+source $SHELLNEST/shell/global/variables.sh
 #================================================================
 
 # SSH FRAMEWORK — shellnest

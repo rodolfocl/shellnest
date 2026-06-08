@@ -162,12 +162,12 @@ make_link() {
 
 mkdir -p "$HOME/.ssh"
 
-make_link "$SHELLNEST/shell/zsh/.zshrc"         "$HOME/.zshrc"
-make_link "$SHELLNEST/shell/bash/.bashrc"        "$HOME/.bashrc"
-make_link "$SHELLNEST/shell/bash/.bash_profile"  "$HOME/.bash_profile"
-make_link "$SHELLNEST/git/.gitconfig"            "$HOME/.gitconfig"
-make_link "$SHELLNEST/git/.gitignore_global"     "$HOME/.gitignore_global"
-make_link "$SHELLNEST/shell/_ssh/config"         "$HOME/.ssh/config"
+make_link "$SHELLNEST/shell/config/zsh/.zshrc"         "$HOME/.zshrc"
+make_link "$SHELLNEST/shell/config/bash/.bashrc"       "$HOME/.bashrc"
+make_link "$SHELLNEST/shell/config/bash/.bash_profile" "$HOME/.bash_profile"
+make_link "$SHELLNEST/git/.gitconfig"                  "$HOME/.gitconfig"
+make_link "$SHELLNEST/git/.gitignore_global"           "$HOME/.gitignore_global"
+make_link "$SHELLNEST/shell/ssh/config"                "$HOME/.ssh/config"
 echo ""
 
 

@@ -60,20 +60,25 @@ vim ~/.ssh/config.local
 shellnest/
 ├── install.sh               # Instalador automático
 ├── shell/
-│   ├── _git/git.sh          # Aliases y funciones git
-│   ├── _clg/clg.sh          # Contexto Colegium
-│   ├── _cmt/cmt.sh          # Contexto CMT
-│   ├── _cns/cns.sh          # Contexto Consorcio
-│   ├── _global/
+│   ├── config/
+│   │   ├── bash/            # Configuración Bash
+│   │   └── zsh/.zshrc       # Configuración principal ZSH
+│   ├── contexts/            # Aliases y funciones por proyecto
+│   │   ├── colegium/
+│   │   ├── cmt/
+│   │   └── consorcio/
+│   ├── git/git.sh           # Aliases y funciones git
+│   ├── global/
 │   │   ├── global.sh        # Aliases globales
 │   │   └── variables.sh     # Variables de color compartidas
-│   ├── _ssh/
-│   │   ├── ssh.sh           # Funciones SSH (tunnel, ssh-hosts, etc.)
-│   │   ├── config           # SSH config versionado
-│   │   └── config.example   # Plantilla de referencia
-│   └── zsh/.zshrc           # Configuración principal ZSH
+│   ├── images/              # ASCII art para la terminal
+│   └── ssh/
+│       ├── ssh.sh           # Funciones SSH (tunnel, ssh-hosts, etc.)
+│       ├── config           # SSH config versionado
+│       └── config.example   # Plantilla de referencia
 ├── git/
 │   ├── .gitconfig
 │   └── .gitignore_global
-└── symlinks/links.sh        # Referencias de symlinks
+└── os/
+    └── mac/                 # Configs macOS (iTerm2, Karabiner)
 ```
