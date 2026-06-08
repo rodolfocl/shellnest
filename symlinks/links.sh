@@ -38,6 +38,9 @@ ln -s .dotfiles/shell/bash/.bash_profile $PWD/.bash_profile
 ln -s .dotfiles/git/.gitconfig $PWD/.gitconfig
 ln -s .dotfiles/git/.gitignore_global $PWD/.gitignore_global
 
+# SSH
+ln -sf $HOME/.dotfiles/shell/_ssh/config $HOME/.ssh/config
+
 # iTerm2
 # No tiene link simbolico se agrega directo desde la configuracion/general/preferences
 
