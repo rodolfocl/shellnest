@@ -57,7 +57,7 @@ Qué actualiza:
 rm -f ~/.zshrc ~/.bashrc ~/.bash_profile ~/.gitconfig ~/.gitignore_global ~/.ssh/config && ~/.shellnest/install.sh
 ```
 
-> Elimina los enlaces simbólicos (no los archivos del repo) y reinstala.
+> Elimina los enlaces simbólicos (no los archivos del repo) y reinstala. Responde `N` a la pregunta de actualizar.
 
 ---
 
