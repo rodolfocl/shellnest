@@ -10,6 +10,7 @@ CMT_LABEL='\033[38;5;244m'   # gris medio        — labels
 CMT_VALUE='\033[38;5;153m'   # azul pastel claro — nombre proyecto
 CMT_START='\033[38;5;150m'   # verde sage        — Iniciando
 CMT_ALIAS='\033[38;5;222m'   # dorado suave      — alias del menú
+CMT_SILVER='\033[38;5;251m'  # gris plateado     — barra de progreso
 
 # CENTRO MEDICO DEL TRABAJADOR
 
@@ -53,7 +54,7 @@ function run() {
   typeset PROYECTO
   PROYECTO="$1"
 
-  # ── Menú de ayuda
+  # Menú de ayuda
   _cmt_menu() {
     echo ""
     echo "  ${BOLD}${CMT_ACCENT}CMT${NC}  ${CMT_LABEL}·${NC}  Laboratorios"
@@ -69,7 +70,7 @@ function run() {
     echo ""
   }
 
-  # ── Encabezado de inicio
+  # Encabezado de inicio
   _cmt_header() {
     local nombre="$1" node="$2" ruta="$3"
     echo ""
@@ -81,6 +82,18 @@ function run() {
     echo "  ${CMT_DIM}│${NC}"
     echo "  ${CMT_DIM}└─${NC} ${CMT_START} ▸ Iniciando servidor...${NC}"
     echo ""
+    # Animación de carga (barra de progreso)
+    local total=36
+    local blocks="" empty=""
+    for k in $(seq 1 $total); do blocks="${blocks}█"; empty="${empty}░"; done
+    for i in $(seq 1 $total); do
+      local pct=$(( i * 100 / total ))
+      local filled="${blocks:0:$i}"
+      local rest="${empty:$i}"
+      printf "\r\033[2K  ${CMT_SILVER}%s${CMT_DIM}%s${NC}  ${CMT_LABEL}%3d%%${NC}" "$filled" "$rest" $pct
+      sleep 0.028
+    done
+    printf "\n\n"
   }
 
   if [[ -z "$PROYECTO" ]]; then
