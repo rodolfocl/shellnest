@@ -44,6 +44,8 @@ alias sofsalud='cd Documents/cmt/integrations/laboratory-sofsalud'
 alias ecg='cd Documents/cmt/integrations/ecg-edx'
 alias biartic='cd Documents/cmt/integrations/optometry-biartic'
 alias drug='cd Documents/cmt/integrations/drugs-server'
+alias api2='cd Documents/cmt/integrations/api-v2-server'
+alias signer='cd Documents/cmt/integrations/signer-server'
 
 
 # Execute projects
@@ -60,19 +62,25 @@ function run() {
   # Menú de ayuda
   _cmt_menu() {
     echo ""
-    echo "  ${BOLD}${CMT_ACCENT}CMT${NC}  ${CMT_LABEL}·${NC}  Laboratorios"
+    echo "  ${BOLD}${CMT_ACCENT}Integración${NC}  ${CMT_LABEL}·${NC}  Laboratorios"
     echo ""
     printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "bionet"   "laboratory-bionet"
     printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "bupa"     "laboratory-server"
     printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "synlab"   "synlab"
     printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "sofsalud" "laboratory-sofsalud"
     echo ""
-    echo "  ${BOLD}${CMT_ACCENT}CMT${NC}  ${CMT_LABEL}·${NC}  Máquinas"
+    echo "  ${BOLD}${CMT_ACCENT}Integración${NC}  ${CMT_LABEL}·${NC}  Máquinas"
     echo ""
     printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "ecg"   "ecg-edx"
     printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "rx"    "rx-server"
     printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "biartic"   "optometry-biartic"
     printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "drug" "drugs-server"
+    echo ""
+    echo "  ${BOLD}${CMT_ACCENT}Integración${NC}  ${CMT_LABEL}·${NC}  Servicios"
+    echo ""
+    printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "api2"    "api-v2-server"
+    printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "hubspot" "hubspot-bulk"
+    printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "signer"  "signer-server"
     echo ""
     echo "  ${CMT_LABEL}Uso: run <proyecto>${NC}"
     echo ""
@@ -165,6 +173,27 @@ function run() {
         cd Documents/cmt/integrations/drugs-server
         nvm use 22.14.0 --silent
         _cmt_header "drugs-server" "22.14.0" "~/Documents/cmt/integrations/drugs-server" "Máquinas"
+        serverless offline --stage dev
+        ;;
+
+      api2)
+        cd Documents/cmt/integrations/api-v2-server
+        nvm use 22.14.0 --silent
+        _cmt_header "api-v2-server" "22.14.0" "~/Documents/cmt/integrations/api-v2-server" "Servicios"
+        serverless offline --stage dev
+        ;;
+
+      hubspot)
+        cd Documents/cmt/integrations/hubspot-bulk
+        nvm use 24.15.0 --silent
+        _cmt_header "hubspot-bulk" "24.15.0" "~/Documents/cmt/integrations/hubspot-bulk" "Servicios"
+        osls offline --stage dev
+        ;;
+
+      signer)
+        cd Documents/cmt/integrations/signer-server
+        nvm use 22.14.0 --silent
+        _cmt_header "signer-server" "22.14.0" "~/Documents/cmt/integrations/signer-server" "Servicios"
         serverless offline --stage dev
         ;;
 
