@@ -53,7 +53,7 @@ alias signer='cd Documents/cmt/integrations/signer-server'
 # alias dev="npm run dev"
 
 
-# FUNCIONES CMT =====================================================
+# FUNCIONES CMT
 
 function run() {
   typeset PROYECTO
