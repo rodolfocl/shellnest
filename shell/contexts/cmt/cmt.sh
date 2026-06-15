@@ -107,7 +107,7 @@ function run() {
       local filled="${blocks:0:$i}"
       local rest="${empty:$i}"
       printf "\r\033[2K  ${CMT_SILVER}%s${CMT_DIM}%s${NC}  ${CMT_LABEL}%3d%%${NC}" "$filled" "$rest" $pct
-      sleep 0.028
+      sleep 0.012
     done
     printf "\n\n"
   }
