@@ -30,7 +30,7 @@ alias bupa='cd Documents/cmt/integrations/laboratory-server'
 alias synlab='cd Documents/cmt/integrations/synlab'
 alias rx='cd Documents/cmt/integrations/rx-server'
 alias invoice='cd Documents/cmt/integrations/invoices-server'
-alias hubspot='cd Documents/cmt/integrations/laboratory-hubspot-bulk'
+alias hubspot='cd Documents/cmt/integrations/hubspot-bulk'
 alias sofsalud='cd Documents/cmt/integrations/laboratory-sofsalud'
 
 
