@@ -41,6 +41,9 @@ alias rx='cd Documents/cmt/integrations/rx-server'
 alias invoice='cd Documents/cmt/integrations/invoices-server'
 alias hubspot='cd Documents/cmt/integrations/hubspot-bulk'
 alias sofsalud='cd Documents/cmt/integrations/laboratory-sofsalud'
+alias ecg='cd Documents/cmt/integrations/ecg-edx'
+alias biartic='cd Documents/cmt/integrations/optometry-biartic'
+alias drug='cd Documents/cmt/integrations/drugs-server'
 
 
 # Execute projects
@@ -59,12 +62,17 @@ function run() {
     echo ""
     echo "  ${BOLD}${CMT_ACCENT}CMT${NC}  ${CMT_LABEL}·${NC}  Laboratorios"
     echo ""
-    echo "  ${CMT_LABEL}Proyectos disponibles:${NC}"
-    echo ""
     printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "bionet"   "laboratory-bionet"
     printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "bupa"     "laboratory-server"
     printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "synlab"   "synlab"
     printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "sofsalud" "laboratory-sofsalud"
+    echo ""
+    echo "  ${BOLD}${CMT_ACCENT}CMT${NC}  ${CMT_LABEL}·${NC}  Máquinas"
+    echo ""
+    printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "ecg"   "ecg-edx"
+    printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "rx"    "rx-server"
+    printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "biartic"   "optometry-biartic"
+    printf "    ${CMT_ALIAS}%-10s${NC}  ${CMT_LABEL}%s${NC}\n" "drug" "drugs-server"
     echo ""
     echo "  ${CMT_LABEL}Uso: run <proyecto>${NC}"
     echo ""
@@ -72,9 +80,9 @@ function run() {
 
   # Encabezado de inicio
   _cmt_header() {
-    local nombre="$1" node="$2" ruta="$3"
+    local nombre="$1" node="$2" ruta="$3" categoria="${4:-CMT}"
     echo ""
-    echo "  ${BOLD}${CMT_ACCENT}⊡${NC} ${BOLD}CMT${NC}  ${CMT_LABEL}·${NC}  Laboratorios"
+    echo "  ${BOLD}${CMT_ACCENT}⊡${NC} ${BOLD}CMT${NC}  ${CMT_LABEL}·${NC}  $categoria"
     echo ""
     printf "  ${CMT_DIM}│${NC}  ${CMT_LABEL}%-12s${NC}  ${BOLD}${CMT_VALUE}%s${NC}\n"  "proyecto"   "$nombre"
     printf "  ${CMT_DIM}│${NC}  ${CMT_LABEL}%-12s${NC}  %s\n"                          "node"       "$node"
@@ -107,29 +115,57 @@ function run() {
       bionet)
         cd Documents/cmt/integrations/laboratory-bionet
         nvm use 22.14.0 --silent
-        _cmt_header "laboratory-bionet" "22.14.0" "~/Documents/cmt/integrations/laboratory-bionet"
+        _cmt_header "laboratory-bionet" "22.14.0" "~/Documents/cmt/integrations/laboratory-bionet" "Laboratorios"
         serverless offline --stage dev
         ;;
 
       bupa)
         cd Documents/cmt/integrations/laboratory-server
         nvm use 22.14.0 --silent
-        _cmt_header "laboratory-server" "22.14.0" "~/Documents/cmt/integrations/laboratory-server"
+        _cmt_header "laboratory-server" "22.14.0" "~/Documents/cmt/integrations/laboratory-server" "Laboratorios"
         serverless offline --stage dev
         ;;
 
       synlab)
         cd Documents/cmt/integrations/synlab
         nvm use 22.14.0 --silent
-        _cmt_header "synlab" "22.14.0" "~/Documents/cmt/integrations/synlab"
+        _cmt_header "synlab" "22.14.0" "~/Documents/cmt/integrations/synlab" "Laboratorios"
         serverless offline --stage dev
         ;;
 
       sofsalud)
         cd Documents/cmt/integrations/laboratory-sofsalud
         nvm use 24.15.0 --silent
-        _cmt_header "laboratory-sofsalud" "24.15.0" "~/Documents/cmt/integrations/laboratory-sofsalud"
+        _cmt_header "laboratory-sofsalud" "24.15.0" "~/Documents/cmt/integrations/laboratory-sofsalud" "Laboratorios"
         osls offline --stage dev
+        ;;
+
+      ecg)
+        cd Documents/cmt/integrations/ecg-edx
+        nvm use 22.14.0 --silent
+        _cmt_header "ecg-edx" "22.14.0" "~/Documents/cmt/integrations/ecg-edx" "Máquinas"
+        serverless offline --stage dev
+        ;;
+
+      rx)
+        cd Documents/cmt/integrations/rx-server
+        nvm use 22.14.0 --silent
+        _cmt_header "rx-server" "22.14.0" "~/Documents/cmt/integrations/rx-server" "Máquinas"
+        serverless offline --stage dev
+        ;;
+
+      biartic)
+        cd Documents/cmt/integrations/optometry-biartic
+        nvm use 22.14.0 --silent
+        _cmt_header "optometry-biartic" "22.14.0" "~/Documents/cmt/integrations/optometry-biartic" "Máquinas"
+        serverless offline --stage dev
+        ;;
+
+      drug)
+        cd Documents/cmt/integrations/drugs-server
+        nvm use 22.14.0 --silent
+        _cmt_header "drugs-server" "22.14.0" "~/Documents/cmt/integrations/drugs-server" "Máquinas"
+        serverless offline --stage dev
         ;;
 
       *)
