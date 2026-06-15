@@ -46,7 +46,7 @@ alias rung="nodemon gdd.js"
 
 # FUNCIONES UTILIZADOS PARA TRABAJAR EN COLEGIUM ================
 
-function run() {
+function run_old() {
   # Parametro ingresado a la funcion
   typeset PROYECTO
   PROYECTO="$1"
