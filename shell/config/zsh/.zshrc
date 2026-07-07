@@ -147,3 +147,6 @@ export NVM_DIR="$HOME/.nvm"
 # Add custom functions CMT
   source $HOME/.zsh_functions
   export PATH="$HOME/.yarn/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/rodolfovenegas/.antigravity-ide/antigravity-ide/bin:$PATH"
