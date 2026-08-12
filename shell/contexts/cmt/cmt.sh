@@ -52,10 +52,6 @@ alias signer='cd Documents/cmt/integrations/signer-server'
 # alias go='npm run start:dev'
 # alias dev="npm run dev"
 
-# MCP BD-BIARTIC (optometry-biartic)
-BIARTIC_ENV="$HOME/Documents/cmt/integrations/optometry-biartic/.env"
-[ -f "$BIARTIC_ENV" ] && export $(grep -E '^MYSQL_BIARTIC_(HOST|PORT|USER|PASS|DB)=' "$BIARTIC_ENV" | xargs)
-
 
 # FUNCIONES CMT
 
