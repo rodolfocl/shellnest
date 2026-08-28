@@ -45,7 +45,7 @@ alias biartic='cd Documents/cmt/integration/optometry-biartic'
 alias drug='cd Documents/cmt/integration/drugs-server'
 alias api2='cd Documents/cmt/integration/api-v2-server'
 alias signer='cd Documents/cmt/core/signer-server'
-
+alias sage='cd Documents/cmt/core/sage-presenter'
 
 # Execute projects
 # alias go='npm run start:dev'
