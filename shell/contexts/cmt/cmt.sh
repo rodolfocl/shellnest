@@ -27,25 +27,24 @@ alias cc="source ~/.zshrc "
 
 # Directories CMT
 alias cmt='cd Documents/cmt'
-alias integrations='cd Documents/cmt/integrations'
-alias sage='cd Documents/cmt/sage'
-alias presenter='cd Documents/cmt/sage/sage-presenter'
-alias general='cd Documents/cmt/general'
-alias data='cd Documents/cmt/integrations/data-collector-server'
-alias queue='cd Documents/cmt/integrations/queue-management-server'
-alias conf='cd Documents/cmt/integrations/confirmation-message-server'
-alias bionet='cd Documents/cmt/integrations/laboratory-bionet'
-alias bupa='cd Documents/cmt/integrations/laboratory-server'
-alias synlab='cd Documents/cmt/integrations/synlab'
-alias rx='cd Documents/cmt/integrations/rx-server'
-alias invoice='cd Documents/cmt/integrations/invoices-server'
-alias hubspot='cd Documents/cmt/integrations/hubspot-bulk'
-alias sofsalud='cd Documents/cmt/integrations/laboratory-sofsalud'
-alias ecg='cd Documents/cmt/integrations/ecg-edx'
-alias biartic='cd Documents/cmt/integrations/optometry-biartic'
-alias drug='cd Documents/cmt/integrations/drugs-server'
-alias api2='cd Documents/cmt/integrations/api-v2-server'
-alias signer='cd Documents/cmt/integrations/signer-server'
+alias integrations='cd Documents/cmt/integration'
+alias core='cd Documents/cmt/core'
+alias presenter='cd Documents/cmt/core/sage-presenter'
+alias data='cd Documents/cmt/integration/data-collector-server'
+alias queue='cd Documents/cmt/integration/queue-management-server'
+alias conf='cd Documents/cmt/integration/confirmation-message-server'
+alias bionet='cd Documents/cmt/integration/laboratory-bionet'
+alias bupa='cd Documents/cmt/integration/laboratory-server'
+alias synlab='cd Documents/cmt/integration/synlab'
+alias rx='cd Documents/cmt/core/rx-server'
+alias invoice='cd Documents/cmt/integration/invoices-server'
+alias hubspot='cd Documents/cmt/integration/hubspot-bulk'
+alias sofsalud='cd Documents/cmt/integration/laboratory-sofsalud'
+alias ecg='cd Documents/cmt/integration/ecg-edx'
+alias biartic='cd Documents/cmt/integration/optometry-biartic'
+alias drug='cd Documents/cmt/integration/drugs-server'
+alias api2='cd Documents/cmt/integration/api-v2-server'
+alias signer='cd Documents/cmt/core/signer-server'
 
 
 # Execute projects
@@ -121,79 +120,79 @@ function run() {
     case "$PROYECTO" in
 
       bionet)
-        cd Documents/cmt/integrations/laboratory-bionet
+        cd Documents/cmt/integration/laboratory-bionet
         nvm use 22.14.0 --silent
-        _cmt_header "laboratory-bionet" "22.14.0" "~/Documents/cmt/integrations/laboratory-bionet" "Laboratorios"
+        _cmt_header "laboratory-bionet" "22.14.0" "~/Documents/cmt/integration/laboratory-bionet" "Laboratorios"
         serverless offline --stage dev
         ;;
 
       bupa)
-        cd Documents/cmt/integrations/laboratory-server
+        cd Documents/cmt/integration/laboratory-server
         nvm use 22.14.0 --silent
-        _cmt_header "laboratory-server" "22.14.0" "~/Documents/cmt/integrations/laboratory-server" "Laboratorios"
+        _cmt_header "laboratory-server" "22.14.0" "~/Documents/cmt/integration/laboratory-server" "Laboratorios"
         serverless offline --stage dev
         ;;
 
       synlab)
-        cd Documents/cmt/integrations/synlab
+        cd Documents/cmt/integration/synlab
         nvm use 22.14.0 --silent
-        _cmt_header "synlab" "22.14.0" "~/Documents/cmt/integrations/synlab" "Laboratorios"
+        _cmt_header "synlab" "22.14.0" "~/Documents/cmt/integration/synlab" "Laboratorios"
         serverless offline --stage dev
         ;;
 
       sofsalud)
-        cd Documents/cmt/integrations/laboratory-sofsalud
+        cd Documents/cmt/integration/laboratory-sofsalud
         nvm use 24.15.0 --silent
-        _cmt_header "laboratory-sofsalud" "24.15.0" "~/Documents/cmt/integrations/laboratory-sofsalud" "Laboratorios"
+        _cmt_header "laboratory-sofsalud" "24.15.0" "~/Documents/cmt/integration/laboratory-sofsalud" "Laboratorios"
         osls offline --stage dev
         ;;
 
       ecg)
-        cd Documents/cmt/integrations/ecg-edx
+        cd Documents/cmt/integration/ecg-edx
         nvm use 22.14.0 --silent
-        _cmt_header "ecg-edx" "22.14.0" "~/Documents/cmt/integrations/ecg-edx" "Máquinas"
+        _cmt_header "ecg-edx" "22.14.0" "~/Documents/cmt/integration/ecg-edx" "Máquinas"
         serverless offline --stage dev
         ;;
 
       rx)
-        cd Documents/cmt/integrations/rx-server
+        cd Documents/cmt/core/rx-server
         nvm use 22.14.0 --silent
-        _cmt_header "rx-server" "22.14.0" "~/Documents/cmt/integrations/rx-server" "Máquinas"
+        _cmt_header "rx-server" "22.14.0" "~/Documents/cmt/core/rx-server" "Máquinas"
         serverless offline --stage dev
         ;;
 
       biartic)
-        cd Documents/cmt/integrations/optometry-biartic
+        cd Documents/cmt/integration/optometry-biartic
         nvm use 22.14.0 --silent
-        _cmt_header "optometry-biartic" "22.14.0" "~/Documents/cmt/integrations/optometry-biartic" "Máquinas"
+        _cmt_header "optometry-biartic" "22.14.0" "~/Documents/cmt/integration/optometry-biartic" "Máquinas"
         serverless offline --stage dev
         ;;
 
       drug)
-        cd Documents/cmt/integrations/drugs-server
+        cd Documents/cmt/integration/drugs-server
         nvm use 22.14.0 --silent
-        _cmt_header "drugs-server" "22.14.0" "~/Documents/cmt/integrations/drugs-server" "Máquinas"
+        _cmt_header "drugs-server" "22.14.0" "~/Documents/cmt/integration/drugs-server" "Máquinas"
         serverless offline --stage dev
         ;;
 
       api2)
-        cd Documents/cmt/integrations/api-v2-server
+        cd Documents/cmt/integration/api-v2-server
         nvm use 22.14.0 --silent
-        _cmt_header "api-v2-server" "22.14.0" "~/Documents/cmt/integrations/api-v2-server" "Servicios"
+        _cmt_header "api-v2-server" "22.14.0" "~/Documents/cmt/integration/api-v2-server" "Servicios"
         serverless offline --stage dev
         ;;
 
       hubspot)
-        cd Documents/cmt/integrations/hubspot-bulk
+        cd Documents/cmt/integration/hubspot-bulk
         nvm use 24.15.0 --silent
-        _cmt_header "hubspot-bulk" "24.15.0" "~/Documents/cmt/integrations/hubspot-bulk" "Servicios"
+        _cmt_header "hubspot-bulk" "24.15.0" "~/Documents/cmt/integration/hubspot-bulk" "Servicios"
         osls offline --stage dev
         ;;
 
       signer)
-        cd Documents/cmt/integrations/signer-server
+        cd Documents/cmt/core/signer-server
         nvm use 22.14.0 --silent
-        _cmt_header "signer-server" "22.14.0" "~/Documents/cmt/integrations/signer-server" "Servicios"
+        _cmt_header "signer-server" "22.14.0" "~/Documents/cmt/core/signer-server" "Servicios"
         serverless offline --stage dev
         ;;
 
